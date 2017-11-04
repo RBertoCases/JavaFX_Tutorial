@@ -97,4 +97,13 @@ private void showPersonDetails(Person person) {
         birthdayLabel.setText("");
         }
     }
+
+    /**
+    * Called when the user clicks on the delete button.
+    */
+    @FXML
+    private void handleDeletePerson() {
+    int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+    personTable.getItems().remove(selectedIndex);
+    }
 }
