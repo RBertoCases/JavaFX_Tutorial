@@ -6,6 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import ch.makery.address.MainApp;
 import ch.makery.address.model.Person;
+import ch.makery.address.util.DateUtil;
 
 public class PersonOverviewController {
     @FXML
@@ -75,9 +76,8 @@ private void showPersonDetails(Person person) {
         streetLabel.setText(person.getStreet());
         postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
         cityLabel.setText(person.getCity());
-
-        // TODO: We need a way to convert the birthday into a String! 
-        // birthdayLabel.setText(...);
+        birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+        
     } else {
         // Person is null, remove all the text.
         firstNameLabel.setText("");
